@@ -42,46 +42,6 @@ const Roadmap = () => {
                 fWeight={700}
                 Color="#4822CF"
                 lHeight={180}
-                content="Q3"
-              />
-              <Main>
-                <Text
-                  fSize={30}
-                  fWeight={700}
-                  Color="#fff"
-                  lHeight={45}
-                  content="2021"
-                  mBottom={33}
-                />
-                <MdRadioButtonChecked className="Midicon" />
-                <DetailItem>
-                  <AiOutlineCheckCircle className="iconItem" color="#4822CF" />
-                  <Text
-                    fSize={14}
-                    fWeight={400}
-                    Color="#948CB4"
-                    lHeight={40}
-                    content="Token contract launch"
-                  />
-                </DetailItem>
-                <DetailItem>
-                  <AiOutlineCheckCircle className="iconItem" color="#4822CF" />
-                  <Text
-                    fSize={14}
-                    fWeight={400}
-                    Color="#948CB4"
-                    lHeight={40}
-                    content="Initial platform design"
-                  />
-                </DetailItem>
-              </Main>
-            </Item>
-            <Item>
-              <Text
-                fSize={120}
-                fWeight={700}
-                Color="#4822CF"
-                lHeight={180}
                 content="Q4"
               />
               <Main>
@@ -101,7 +61,7 @@ const Roadmap = () => {
                     fWeight={400}
                     Color="#948CB4"
                     lHeight={40}
-                    content="NFT Marketplace Demo Live"
+                    content="Token Contract Launch"
                   />
                 </DetailItem>
                 <DetailItem>
@@ -111,7 +71,7 @@ const Roadmap = () => {
                     fWeight={400}
                     Color="#948CB4"
                     lHeight={40}
-                    content="Building Social Media Community"
+                    content="Initial Platform Design"
                   />
                 </DetailItem>
                 <DetailItem>
@@ -121,7 +81,7 @@ const Roadmap = () => {
                     fWeight={400}
                     Color="#948CB4"
                     lHeight={40}
-                    content="Establish Partnerships"
+                    content="Marketplace Demo Live"
                   />
                 </DetailItem>
               </Main>
@@ -145,43 +105,43 @@ const Roadmap = () => {
                 />
                 <MdRadioButtonChecked className="Midicon" />
                 <DetailItem>
-                  <AiOutlineCheckCircle className="iconItem" />
+                  <AiOutlineCheckCircle className="iconItem" color="#4822CF" />
                   <Text
                     fSize={14}
                     fWeight={400}
                     Color="#948CB4"
                     lHeight={40}
-                    content="Main Test"
+                    content="Token launch event"
                   />
                 </DetailItem>
                 <DetailItem>
-                  <AiOutlineCheckCircle className="iconItem" />
+                  <AiOutlineCheckCircle className="iconItem" color="#4822CF" />
                   <Text
                     fSize={14}
                     fWeight={400}
                     Color="#948CB4"
                     lHeight={40}
-                    content="Launch Event"
+                    content="BSC marketplace live"
                   />
                 </DetailItem>
                 <DetailItem>
-                  <AiOutlineCheckCircle className="iconItem" />
+                  <AiOutlineCheckCircle className="iconItem" color="#4822CF" />
                   <Text
                     fSize={14}
                     fWeight={400}
                     Color="#948CB4"
                     lHeight={40}
-                    content="Mainnet Test"
+                    content="Establish partnership"
                   />
                 </DetailItem>
                 <DetailItem>
-                  <AiOutlineCheckCircle className="iconItem" />
+                  <AiOutlineCheckCircle className="iconItem" color="#4822CF" />
                   <Text
                     fSize={14}
                     fWeight={400}
                     Color="#948CB4"
                     lHeight={40}
-                    content="Beta Version Live"
+                    content="Awareness marketing campaign"
                   />
                 </DetailItem>
               </Main>
@@ -192,7 +152,7 @@ const Roadmap = () => {
                 fWeight={700}
                 Color="#4822CF"
                 lHeight={180}
-                content="Q2+"
+                content="Q2"
               />
               <Main>
                 <Text
@@ -211,7 +171,7 @@ const Roadmap = () => {
                     fWeight={400}
                     Color="#948CB4"
                     lHeight={40}
-                    content="Mainnet Launch"
+                    content="Ethereum marketplace test"
                   />
                 </DetailItem>
                 <DetailItem>
@@ -221,7 +181,7 @@ const Roadmap = () => {
                     fWeight={400}
                     Color="#948CB4"
                     lHeight={40}
-                    content="Awareness Marketing Campaign"
+                    content="Team expansion"
                   />
                 </DetailItem>
                 <DetailItem>
@@ -231,7 +191,7 @@ const Roadmap = () => {
                     fWeight={400}
                     Color="#948CB4"
                     lHeight={40}
-                    content="Team Expansion"
+                    content="Ethereum marketplace live"
                   />
                 </DetailItem>
                 <DetailItem>
@@ -241,7 +201,87 @@ const Roadmap = () => {
                     fWeight={400}
                     Color="#948CB4"
                     lHeight={40}
-                    content="Multi Chain Marketplace Live"
+                    content="Market-maker protocol test"
+                  />
+                </DetailItem>
+              </Main>
+            </Item>
+            <Item>
+              <Text
+                fSize={120}
+                fWeight={700}
+                Color="#4822CF"
+                lHeight={180}
+                content="Q3+"
+              />
+              <Main>
+                <Text
+                  fSize={30}
+                  fWeight={700}
+                  Color="#fff"
+                  lHeight={45}
+                  content="2022"
+                  mBottom={33}
+                />
+                <MdRadioButtonChecked className="Midicon" />
+                <DetailItem>
+                  <AiOutlineCheckCircle className="iconItem" />
+                  <Text
+                    fSize={14}
+                    fWeight={400}
+                    Color="#948CB4"
+                    lHeight={40}
+                    content="Expansion to more blockchains"
+                  />
+                </DetailItem>
+                <DetailItem>
+                  <AiOutlineCheckCircle className="iconItem" />
+                  <Text
+                    fSize={14}
+                    fWeight={400}
+                    Color="#948CB4"
+                    lHeight={40}
+                    content="Solana"
+                  />
+                </DetailItem>
+                <DetailItem>
+                  <AiOutlineCheckCircle className="iconItem" />
+                  <Text
+                    fSize={14}
+                    fWeight={400}
+                    Color="#948CB4"
+                    lHeight={40}
+                    content="Avalanche"
+                  />
+                </DetailItem>
+                <DetailItem>
+                  <AiOutlineCheckCircle className="iconItem" />
+                  <Text
+                    fSize={14}
+                    fWeight={400}
+                    Color="#948CB4"
+                    lHeight={40}
+                    content="Fantom"
+                  />
+                </DetailItem>
+                <DetailItem>
+                  <AiOutlineCheckCircle className="iconItem" />
+                  <Text
+                    fSize={14}
+                    fWeight={400}
+                    Color="#948CB4"
+                    lHeight={40}
+                    content="More…"
+                  />
+                </DetailItem>
+                <DetailItem>
+                  <AiOutlineCheckCircle className="iconItem" />
+                  <Text
+                    fSize={14}
+                    fWeight={400}
+                    Color="#948CB4"
+                    lHeight={40}
+                    content="Mobile marketplace app"
                   />
                 </DetailItem>
               </Main>
