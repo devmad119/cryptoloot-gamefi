@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaEthereum, FaLock } from 'react-icons/fa';
+import { FaLock } from 'react-icons/fa';
+import { SiBinance } from 'react-icons/si';
 
 import {
   StakeContainer,
@@ -19,9 +20,8 @@ import {
   RightSection,
   StyledCard,
 } from './stake.styled';
-import Header from '../components/Header/Header';
-import Breadcrumb from '../components/Breadcrumb/Breadcrumb';
-import Footer from '../components/Footer/Footer';
+import Navbar from '../components/landing/layout/navbar';
+import Footer from '../components/landing/layout/footer';
 import ModalSearch from '../components/Modal/ModalSearch';
 import ModalMenu from '../components/Modal/ModalMenu';
 import Scrollup from '../components/Scrollup/Scrollup';
@@ -35,11 +35,9 @@ const Stake = () => {
 
   return (
     <div className="main">
-      <Header />
-      <Breadcrumb title="Stake" />
+      <Navbar />
       <StakeContainer>
         <h3>staking</h3>
-        <h1>CLOOT Token</h1>
         <StakeCard>
           <TabHeader>
             <TabHeaderItem active={tabActive === 'stake' ? true : false} onClick={() => handleTabClick('stake')}>
@@ -51,9 +49,7 @@ const Stake = () => {
           </TabHeader>
           {tabActive === 'stake' ? (
             <TabContent>
-              <p>
-                Stake your CLOOT and start earning. <a>Learn more</a>
-              </p>
+              <p>Stake your CLOOT and start earning.</p>
               <ContentSection>
                 <LeftSection>
                   <div />
@@ -67,7 +63,7 @@ const Stake = () => {
                       <div>
                         <span>MAX</span>
                         <Icon>
-                          <FaEthereum />
+                          <SiBinance />
                         </Icon>
                       </div>
                     </FormInput>
@@ -75,7 +71,7 @@ const Stake = () => {
                   <StyledButton>
                     <ButtonLabel>
                       <FaLock />
-                      <span>Staked</span>
+                      <span>Stake</span>
                     </ButtonLabel>
                   </StyledButton>
                   <Description>Your CLOOT tokens will be looked for 7 days. After that time, you're free to withdraw any time.</Description>

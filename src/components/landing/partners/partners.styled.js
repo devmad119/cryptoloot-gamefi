@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const PartnersContainer = styled.div`
   background: #09080d;
@@ -11,7 +11,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media screen and (max-width: 1310px) {
+  @media screen and (max-width: 900px) {
     flex-direction: column;
   }
 `;
@@ -49,11 +49,10 @@ export const ControlButton = styled.div`
   cursor: pointer;
 `;
 export const DisplayPartners = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 50px;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  grid-gap: 50px;
   img {
     opacity: 0.6;
     cursor: pointer;
@@ -64,13 +63,8 @@ export const DisplayPartners = styled.div`
   @media screen and (max-width: 1310px) {
     margin-top: 30px;
   }
-  @media screen and (max-width: 880px) {
-    grid-template-columns: 1fr 1fr;
-    /* width: 60%; */
-    width: 80%;
-    height: auto;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
   }
-  /* @media screen and (max-width: 375px) {
-    grid-template-columns: 1fr;
-  } */
 `;
