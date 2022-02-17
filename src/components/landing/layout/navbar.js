@@ -184,19 +184,18 @@ export const MobileItem = styled.div`
   grid-gap: 20px;
 `;
 export const StakeBtn = styled.div`
-  color: purple;
   border-radius: 50px;
   width: 100px;
   height: 50px;
   display: flex;
+  color: #fff;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  border: 2px solid #2a292f;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   :hover{
     background: linear-gradient(110.86deg,#57048a 9.46%,#4822cf 89.64%);
-    color: #fff;
   }
 `;
 const Navbar = () => {

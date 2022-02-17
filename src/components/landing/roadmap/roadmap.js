@@ -105,7 +105,7 @@ const Roadmap = () => {
                 />
                 <MdRadioButtonChecked className="Midicon" />
                 <DetailItem>
-                  <AiOutlineCheckCircle className="iconItem" color="#4822CF" />
+                  <AiOutlineCheckCircle className="iconItem" color="#fff" />
                   <Text
                     fSize={14}
                     fWeight={400}
@@ -115,7 +115,7 @@ const Roadmap = () => {
                   />
                 </DetailItem>
                 <DetailItem>
-                  <AiOutlineCheckCircle className="iconItem" color="#4822CF" />
+                  <AiOutlineCheckCircle className="iconItem" color="#fff" />
                   <Text
                     fSize={14}
                     fWeight={400}
@@ -125,7 +125,7 @@ const Roadmap = () => {
                   />
                 </DetailItem>
                 <DetailItem>
-                  <AiOutlineCheckCircle className="iconItem" color="#4822CF" />
+                  <AiOutlineCheckCircle className="iconItem" color="#fff" />
                   <Text
                     fSize={14}
                     fWeight={400}
@@ -135,7 +135,7 @@ const Roadmap = () => {
                   />
                 </DetailItem>
                 <DetailItem>
-                  <AiOutlineCheckCircle className="iconItem" color="#4822CF" />
+                  <AiOutlineCheckCircle className="iconItem" color="#fff" />
                   <Text
                     fSize={14}
                     fWeight={400}

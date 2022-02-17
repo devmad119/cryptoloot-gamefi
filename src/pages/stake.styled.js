@@ -1,27 +1,38 @@
 import styled from 'styled-components';
 
 export const StakeContainer = styled.div`
-  background-color: #0a111c;
+  background-color: #09080d;
   width: 100vw;
-  min-height: 100vh;
+  padding: 10vh 0;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   h3 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    margin-top: 20vh;
-    margin-bottom: 5vh;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    background-image: linear-gradient(150deg, var(--secondary-color) 0%, var(--primary-color) 78%);
+  }
+  h1 {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.75rem;
+    color: white;
   }
 `;
 
 export const StakeCard = styled.div`
   max-width: 750px;
   width: 100%;
-  background-color: #1f2733;
+  background-color: #16151a;
   border-radius: 15px;
   padding: 2em;
   display: flex;
@@ -33,19 +44,18 @@ export const TabHeader = styled.div`
   display: flex;
   border-radius: 10px;
   width: 100%;
-  border: 1px solid #0a111c;
+  border: 1px solid #09080d;
 `;
 
 export const TabHeaderItem = styled.div`
   display: flex;
-  background-color: ${props => (props.active ? '#0a111c' : 'transparent')};
+  background-color: ${props => (props.active ? '#09080d' : 'transparent')};
   border-radius: 10px;
   width: 50%;
   justify-content: center;
   padding: 8px 0;
   font-size: 16px;
   transition: all 0.3s ease-in-out;
-  font-family: 'Inter', sans-serif;
   cursor: pointer;
 `;
 
@@ -54,14 +64,13 @@ export const TabContent = styled.div`
   flex-direction: column;
 
   p {
-    width: 300px;
+    width: 350px;
     font-size: 15px;
-    font-family: 'Inter', sans-serif;
     font-weight: 400;
     margin: 0;
     padding: 0;
     a {
-      color: #6c757d !important;
+      color: #8e8e8e !important;
       text-decoration: underline !important;
       z-index: 5;
     }
@@ -94,7 +103,6 @@ export const FormLabel = styled.div`
   justify-content: space-between;
   span {
     font-size: 12px;
-    font-family: 'Inter', sans-serif;
   }
 `;
 
@@ -133,7 +141,6 @@ export const FormInput = styled.div`
     color: #fff;
     background-color: rgb(108, 117, 125);
     border-radius: 0.25rem;
-    font-family: 'Inter', sans-serif;
     width: 44px;
     height: 20px;
   }
@@ -152,15 +159,23 @@ export const Icon = styled.div`
 
 export const StyledButton = styled.div`
   outline: none;
-  background-color: #4957cb !important;
-  border-color: #4957cb !important;
+  background-image: linear-gradient(150deg, #4528dc 0%, #57048a 78%);
+  border-color: transparent;
   height: 55px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 0.25rem;
+  border-radius: 1.5rem;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  :hover {
+    background-image: linear-gradient(150deg, #57048a 0%, #4528dc 78%);
+  }
+  :active {
+    transform: scale(0.85);
+  }
 `;
 
 export const ButtonLabel = styled.div`
@@ -170,7 +185,6 @@ export const ButtonLabel = styled.div`
 
   span {
     font-size: 1rem;
-    font-family: 'Inter', sans-serif;
   }
 
   svg {
@@ -181,8 +195,7 @@ export const ButtonLabel = styled.div`
 
 export const Description = styled.span`
   font-size: 12px;
-  font-family: 'Inter', sans-serif;
-  color: #6c757d !important;
+  color: #8e8e8e !important;
   max-width: 336px;
 `;
 
@@ -199,7 +212,8 @@ export const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
   grid-gap: 10px;
-  background-color: #0a111c;
+  background-color: transparent;
+  border: 2px solid #09080d;
   border-radius: 5px;
 
   hr {
@@ -210,11 +224,9 @@ export const StyledCard = styled.div`
   }
   .top {
     font-size: 20px;
-    font-family: 'Inter', sans-serif;
     color: #a1abb9 !important;
   }
   .bottom {
     font-size: 32px;
-    font-family: 'Inter', sans-serif;
   }
 `;
