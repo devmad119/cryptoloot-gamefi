@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import detectEthereumProvider from "@metamask/detect-provider";
-import styled from "styled-components";
-import { ImMenu } from "react-icons/im";
-import { AiOutlineClose } from "react-icons/ai";
-import Union from "../../../asserts/Union.png";
-import Telegram from "../../../asserts/Telegram.png";
-import Twitter from "../../../asserts/Twitter.png";
-import Button from "../product/Button";
-import Content from "../content/Content";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import detectEthereumProvider from '@metamask/detect-provider';
+import styled from 'styled-components';
+import { ImMenu } from 'react-icons/im';
+import { AiOutlineClose } from 'react-icons/ai';
+import Union from '../../../asserts/Union.png';
+import Telegram from '../../../asserts/Telegram.png';
+import Twitter from '../../../asserts/Twitter.png';
+import Button from '../product/Button';
+import Content from '../content/Content';
+import { Link } from 'react-router-dom';
 
 export const NavbarContainer = styled.div`
   padding-top: 30px;
@@ -90,7 +90,7 @@ export const MenuContent = styled.div`
   }
 `;
 export const Item = styled.span`
-  font-family: "Poppins" sans-serif;
+  font-family: 'Poppins' sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -104,7 +104,7 @@ export const Item = styled.span`
   overflow: hidden;
 
   ::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -194,18 +194,18 @@ export const StakeBtn = styled.div`
   border: 2px solid #2a292f;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  :hover{
-    background: linear-gradient(110.86deg,#57048a 9.46%,#4822cf 89.64%);
+  :hover {
+    background: linear-gradient(110.86deg, #57048a 9.46%, #4822cf 89.64%);
   }
 `;
 const Navbar = () => {
   const ethereum = window.ethereum;
-  const [provider, setProvider] = useState("undefined");
+  const [provider, setProvider] = useState('undefined');
   const [defautAccount, setDefaultAccount] = useState(null);
-  const [addr, setAddr] = useState("Connect Wallet");
+  const [addr, setAddr] = useState('Connect Wallet');
   const [isClicked, setClicked] = useState(false);
   const [showNavbar, setshowNavbar] = useState(true);
-  const handleScreenChange = (mediaQuery) => {
+  const handleScreenChange = mediaQuery => {
     if (mediaQuery.matches) {
       setshowNavbar(true);
     } else {
@@ -213,7 +213,7 @@ const Navbar = () => {
     }
   };
   useEffect(() => {
-    let window_width = window.matchMedia("(min-width:1100px)");
+    let window_width = window.matchMedia('(min-width:1100px)');
     window_width.addListener(handleScreenChange);
     handleScreenChange(window_width);
     return () => {
@@ -227,29 +227,25 @@ const Navbar = () => {
     const handleEthereum = async () => {
       const { ethereum } = window;
       if (ethereum && ethereum.isMetaMask) {
-        console.log("Ethereum successfully detected!");
+        console.log('Ethereum successfully detected!');
         try {
           const accounts = await window.ethereum.request({
-            method: "eth_requestAccounts",
+            method: 'eth_requestAccounts',
           });
-          setAddr(
-            accounts[0].substr(0, 6) +
-            "..." +
-            accounts[0].substr(accounts[0].length - 4)
-          );
+          setAddr(accounts[0].substr(0, 6) + '...' + accounts[0].substr(accounts[0].length - 4));
           setClicked(true);
           setProvider(await detectEthereumProvider());
         } catch (error) {
           console.error(error);
         }
       } else {
-        alert("Please install MetaMask!");
+        alert('Please install MetaMask!');
       }
     };
     if (window.ethereum) {
       handleEthereum();
     } else {
-      window.addEventListener("ethereum#initialized", handleEthereum, {
+      window.addEventListener('ethereum#initialized', handleEthereum, {
         once: true,
       });
       setTimeout(handleEthereum, 3000); // 3 seconds
@@ -260,13 +256,9 @@ const Navbar = () => {
     const handleEthereum = async () => {
       try {
         const accounts = await window.ethereum.request({
-          method: "eth_requestAccounts",
+          method: 'eth_requestAccounts',
         });
-        setAddr(
-          accounts[0].substr(0, 6) +
-          "..." +
-          accounts[0].substr(accounts[0].length - 4)
-        );
+        setAddr(accounts[0].substr(0, 6) + '...' + accounts[0].substr(accounts[0].length - 4));
         setClicked(true);
         setProvider(await detectEthereumProvider());
       } catch (error) {
@@ -276,17 +268,13 @@ const Navbar = () => {
     if (window.ethereum) {
       handleEthereum();
     } else {
-      window.open("https://metamask.app.link/dapp/cryptoloot.trade");
+      window.open('https://metamask.app.link/dapp/cryptoloot.trade');
     }
   };
 
-  if (provider !== "undefined") {
-    ethereum.on("accountsChanged", function (accounts) {
-      setAddr(
-        accounts[0].substr(0, 6) +
-        "..." +
-        accounts[0].substr(accounts[0].length - 4)
-      );
+  if (provider !== 'undefined') {
+    ethereum.on('accountsChanged', function (accounts) {
+      setAddr(accounts[0].substr(0, 6) + '...' + accounts[0].substr(accounts[0].length - 4));
     });
   }
 
@@ -294,95 +282,48 @@ const Navbar = () => {
     <Content>
       <NavbarContainer>
         <a href="/">
-          <img
-            className="logo"
-            draggable="false"
-            src={Union}
-            alt="Union"
-            width="90px"
-            height="auto"
-          />
+          <img className="logo" draggable="false" src={Union} alt="Union" width="90px" height="auto" />
         </a>
         {showNavbar ? (
           <>
             <MenuContent>
               <Item>
-                <a href="/" style={{ color: "white" }}>
+                <a href="/" style={{ color: 'white' }}>
                   Home
                 </a>
               </Item>
               <Item>
-                <a href="#roadmap" style={{ color: "white" }}>
+                <a href="#roadmap" style={{ color: 'white' }}>
                   Roadmap
                 </a>
               </Item>
               <Item>
-                <a
-                  href="https://drive.google.com/file/d/1vgzK40eKr0mU4B8mBHsiK2hoEE8Xgg2W/view"
-                  target="_blank"
-                  style={{ color: "white" }}
-                >
+                <a href="https://drive.google.com/file/d/1vgzK40eKr0mU4B8mBHsiK2hoEE8Xgg2W/view" target="_blank" style={{ color: 'white' }}>
                   Pitch Deck
                 </a>
               </Item>
-              <AiOutlineClose
-                className="icon-light-style-com"
-                onClick={() => setshowNavbar(!showNavbar)}
-              />
+              <AiOutlineClose className="icon-light-style-com" onClick={() => setshowNavbar(!showNavbar)} />
               <LinkDivMobile>
                 <MobileItem>
                   <a href="https://t.me/CryptoLoot_trade" target="_blank">
-                    <img
-                      draggable="false"
-                      src={Telegram}
-                      alt="Telegram"
-                      width="50px"
-                      height="auto"
-                    />
+                    <img draggable="false" src={Telegram} alt="Telegram" width="50px" height="auto" />
                   </a>
                   <a href="https://twitter.com/CryptoLootTrade" target="_blank">
-                    <img
-                      draggable="false"
-                      src={Twitter}
-                      alt="Twitter"
-                      width="50px"
-                      height="auto"
-                    />
+                    <img draggable="false" src={Twitter} alt="Twitter" width="50px" height="auto" />
                   </a>
                 </MobileItem>
-                <a href="https://cryptoloot.trade/auctions">
-                  <Button
-                    // onClick={getMobAddress}
-                    content={addr}
-                    fSize={14}
-                    width={210}
-                    height={50}
-                    flag={1}
-                  />
-                </a>
+                <Button onClick={getMobAddress} content={addr} fSize={14} width={210} height={50} flag={1} />
               </LinkDivMobile>
             </MenuContent>
           </>
         ) : (
-          <ImMenu
-            className="responsive-bar-icon"
-            onClick={() => setshowNavbar(!showNavbar)}
-          />
+          <ImMenu className="responsive-bar-icon" onClick={() => setshowNavbar(!showNavbar)} />
         )}
         <LinkDivDesktop>
           <Link to="/stake">
             <StakeBtn>Stake</StakeBtn>
           </Link>
-          <a href="https://cryptoloot.trade/auctions">
-            <Button
-              // onClick={getMobAddress}
-              content={addr}
-              fSize={14}
-              width={210}
-              height={50}
-              flag={1}
-            />
-          </a>
+          <Button onClick={getMobAddress} content={addr} fSize={14} width={210} height={50} flag={1} />
         </LinkDivDesktop>
       </NavbarContainer>
     </Content>
