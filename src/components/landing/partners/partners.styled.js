@@ -11,7 +11,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1100px) {
     flex-direction: column;
   }
 `;
@@ -64,7 +64,24 @@ export const DisplayPartners = styled.div`
     margin-top: 30px;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 900px) {
     flex-direction: column;
+  }
+`;
+
+export const DisplayPad = styled.div`
+  grid-gap: 20px;
+  opacity: 0.6;
+  justify-content: space-between;
+  cursor: pointer;
+  :hover {
+    opacity: 1;
+  }
+  display: flex;
+  align-items: center;
+  span {
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
   }
 `;
