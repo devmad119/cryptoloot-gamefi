@@ -29,9 +29,9 @@ const Team = () => {
             linkedin="https://www.linkedin.com/in/matthijs-janssen-nl/"
           />
           <ImageCard imageSize={210} imageUrl={Person2} title="Daan" content="CMO" linkedin="https://www.linkedin.com/in/daan-spruit-4517b620b/" />
-          <ImageCard imageSize={210} imageUrl={Person3} title="Patrick" content="Marketing & Content Manager" />
-          <ImageCard imageSize={210} imageUrl={Person4} title="Xueming" content="Blockchain Developer" />
-          <ImageCard className="lastChild" imageSize={210} imageUrl={Person5} title="Alex" content="Front-End Developer" />
+          <ImageCard imageSize={210} imageUrl={Person3} title="Patrick" content="Marketing & Content Manager" nolinkedin="Undoxxed" />
+          <ImageCard imageSize={210} imageUrl={Person4} title="Xueming" content="Blockchain Developer" nolinkedin="Undoxxed" />
+          <ImageCard className="lastChild" imageSize={210} imageUrl={Person5} title="Alex" content="Front-End Developer" nolinkedin="Undoxxed" />
         </ImageGroup>
       </TeamContainer>
     </Content>
