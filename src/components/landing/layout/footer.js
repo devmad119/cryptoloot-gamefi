@@ -111,7 +111,7 @@ const Footer = () => {
           <Item>
             <Text fSize={24} fWeight={700} Color="#fff" lHeight={36} content="Business" />
             <LinkGroup>
-              <a style={{ color: '#948cb4' }} href="https://cryptoloot.gitbook.io/cryptoloot/" target="_blank">
+              <a style={{ color: '#948cb4' }} href="https://cryptoloot.gitbook.io/cryptoloot" target="_blank">
                 Documentation
               </a>
               <a style={{ color: '#948cb4' }} href="https://drive.google.com/file/d/1vgzK40eKr0mU4B8mBHsiK2hoEE8Xgg2W/view" target="_blank">
