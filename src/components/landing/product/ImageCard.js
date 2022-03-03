@@ -45,13 +45,12 @@ const ImageCard = props => {
       <Text fSize={24} lHeight={36} fWeight={700} Color="#fff" content={props.title} />
       <Contact>
         <Text fSize={16} lHeight={30} fWeight={400} Color="#948CB4" content={props.content} />
-        {props.linkedin ? (
+        {props.linkedin && (
           <a href={props.linkedin} target="_blank">
             LInkedIn
           </a>
-        ) : (
-          <span>Undoxxed</span>
         )}
+        {props.nolinkedin && <span>Undoxxed</span>}
       </Contact>
     </ImageCardContainer>
   );

@@ -41,7 +41,7 @@ export const Card = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #11112c;
+  background: rgb(72, 34, 207);
 `;
 
 export const CardHeading = styled.div`
