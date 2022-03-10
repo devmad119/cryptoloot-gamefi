@@ -7,48 +7,46 @@ import Footer from '../components/Footer/Footer';
 import ModalSearch from '../components/Modal/ModalSearch';
 import ModalMenu from '../components/Modal/ModalMenu';
 import Scrollup from '../components/Scrollup/Scrollup';
-import {useState} from 'react';
+import { useState } from 'react';
 
 function WalletConnect() {
+  const ethereum = window.ethereum;
+  const [addr, setAddr] = useState('');
 
+  const getAddress = async () => {
+    console.log('clicked');
 
-    const ethereum = window.ethereum;
-    const [addr,setAddr] = useState('');
-    
-    const getAddress = async () => {
-        console.log("clicked");
-        
-        try {
-          // Will open the MetaMask UI
-          // You should disable this button while the request is pending!
-          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-          setAddr(accounts[0]);
-        } catch (error) {
-          console.error(error);
-        }
-      };
+    try {
+      // Will open the MetaMask UI
+      // You should disable this button while the request is pending!
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      setAddr(accounts[0]);
+      localStorage.setItem('walletAddress', accounts[0]);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
+  if (ethereum) {
+    getAddress();
 
-    if(ethereum) {
-        getAddress();
+    ethereum.on('accountsChanged', function (accounts) {
+      setAddr(accounts[0]);
+      localStorage.setItem('walletAddress', accounts[0]);
+    });
+  }
 
-        ethereum.on('accountsChanged', function(accounts) {
-        setAddr(accounts[0]);
-        })
-    }  
-       
-    return (
-        <div className="main">
-            <Header />
-            <Breadcrumb title={addr ? addr: "Wallet Connect"}  subpage="Pages" page="Wallet Connect" />
-            <Wallet />
-            <Footer />
-            <ModalSearch />
-            <ModalMenu />
-            <Scrollup />
-        </div>
-       );
-        
+  return (
+    <div className="main">
+      <Header />
+      <Breadcrumb title={addr ? addr : 'Wallet Connect'} subpage="Pages" page="Wallet Connect" />
+      <Wallet />
+      <Footer />
+      <ModalSearch />
+      <ModalMenu />
+      <Scrollup />
+    </div>
+  );
 }
 
 export default WalletConnect;

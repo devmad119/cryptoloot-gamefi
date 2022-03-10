@@ -35,7 +35,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy_test": "npx hardhat test",
+    "deploy_fantomtest": "npx hardhat run --network fantomtestnet scripts/deploy.js",
+    "deploy_ganache": "npx hardhat run --network ganache scripts/deploy.js",
+    "deploy_local": "npx hardhat run --network localhost scripts/deploy.js",
+    "deploy_bsctest": "npx hardhat run --network bsctestnet scripts/deploy.js",
+    "deploy_bsc": "npx hardhat run --network bsc scripts/deploy.js",
+    "deploy": "npx hardhat run --network bsc scripts/deploy-production.js"
   },
   "eslintConfig": {
     "extends": [
@@ -54,5 +61,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.5",
+    "@nomiclabs/hardhat-etherscan": "^3.0.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "chai": "^4.3.6",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.5.4",
+    "hardhat": "^2.9.1"
   }
 }
