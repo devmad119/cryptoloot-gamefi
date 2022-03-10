@@ -135,6 +135,18 @@ export const FormInput = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
 
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
   @media screen and (max-width: 425px) {
     width: 320px;
   }
@@ -171,6 +183,12 @@ export const FormInput = styled.div`
     width: 44px;
     height: 20px;
   }
+`;
+
+export const Wanning = styled.div`
+  text-align: center;
+  font-size: 15px;
+  color: red;
 `;
 
 export const Icon = styled.div`
@@ -263,6 +281,32 @@ export const StyledCard = styled.div`
     color: #a1abb9 !important;
   }
   .bottom {
-    font-size: 32px;
+    font-size: 25px;
+  }
+`;
+
+export const RewardBlock = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const ClaimRewardBtn = styled.div`
+  outline: none;
+  padding: 0 15px;
+  background-image: linear-gradient(150deg, #4528dc 0%, #57048a 78%);
+  border-color: transparent;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  :hover {
+    background-image: linear-gradient(150deg, #57048a 0%, #4528dc 78%);
+  }
+  :active {
+    transform: scale(0.85);
   }
 `;

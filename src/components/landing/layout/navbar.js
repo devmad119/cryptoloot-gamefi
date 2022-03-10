@@ -216,6 +216,8 @@ const Navbar = () => {
     let window_width = window.matchMedia('(min-width:1100px)');
     window_width.addListener(handleScreenChange);
     handleScreenChange(window_width);
+    const t_walletaddress = localStorage.getItem('walletAddress');
+    if (t_walletaddress) setAddr(t_walletaddress.substr(0, 6) + '...' + t_walletaddress.substr(t_walletaddress.length - 4));
     return () => {
       window_width.removeListener(handleScreenChange);
     };
@@ -233,6 +235,7 @@ const Navbar = () => {
             method: 'eth_requestAccounts',
           });
           setAddr(accounts[0].substr(0, 6) + '...' + accounts[0].substr(accounts[0].length - 4));
+          localStorage.setItem('walletAddress', accounts[0]);
           setClicked(true);
           setProvider(await detectEthereumProvider());
         } catch (error) {
@@ -253,20 +256,42 @@ const Navbar = () => {
   };
 
   const getMobAddress = async () => {
-    const handleEthereum = async () => {
-      try {
-        const accounts = await window.ethereum.request({
-          method: 'eth_requestAccounts',
-        });
-        setAddr(accounts[0].substr(0, 6) + '...' + accounts[0].substr(accounts[0].length - 4));
-        setClicked(true);
-        setProvider(await detectEthereumProvider());
-      } catch (error) {
-        console.error(error);
+    const handleConnect = () => {
+      if (window.ethereum) {
+        try {
+          window.ethereum.enable().then(res => {
+            localStorage.setItem('walletAddress', window.ethereum.selectedAddress);
+            setAddr(
+              window.ethereum.selectedAddress.substr(0, 6) +
+                '...' +
+                window.ethereum.selectedAddress.substr(window.ethereum.selectedAddress.length - 4),
+            );
+            setClicked(true);
+            // setProvider(await detectEthereumProvider());
+          });
+        } catch (e) {
+          console.log(e);
+        }
+      } else if (window.web3) {
+      } else {
+        alert('You have to install MetaMask !');
       }
     };
+    // const handleEthereum = async () => {
+    //   try {
+    //     const accounts = await window.ethereum.request({
+    //       method: 'eth_requestAccounts',
+    //     });
+    //     setAddr(accounts[0].substr(0, 6) + '...' + accounts[0].substr(accounts[0].length - 4));
+    //     localStorage.setItem('walletAddress', accounts[0]);
+    //     setClicked(true);
+    //     setProvider(await detectEthereumProvider());
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // };
     if (window.ethereum) {
-      handleEthereum();
+      handleConnect();
     } else {
       window.open('https://metamask.app.link/dapp/cryptoloot.trade');
     }
@@ -275,6 +300,7 @@ const Navbar = () => {
   if (provider !== 'undefined') {
     ethereum.on('accountsChanged', function (accounts) {
       setAddr(accounts[0].substr(0, 6) + '...' + accounts[0].substr(accounts[0].length - 4));
+      localStorage.setItem('walletAddress', accounts[0]);
     });
   }
 
